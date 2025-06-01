@@ -103,7 +103,7 @@ const Navbar: React.FC<NavbarProps> = ({setCenter}) => {
     <div className='navbar'>
       <h1 id = "logo">HereJPG</h1>
       <form onSubmit={handleSearch} className='input-group mb-0' id='searchBar'>
-        <input id='searchBar' className='form-control' type="text" placeholder='Enter location' value={searchQuery} onChange={updateSearchQuery} onFocus={() => setShowSuggestions(true)}/>
+        <input id='searchBarText' className='form-control' type="text" placeholder='Enter location' value={searchQuery} onChange={updateSearchQuery} onFocus={() => setShowSuggestions(true)}/>
         {showSuggestions && suggestions.length > 0 && (
         <ul style={{
           position: 'absolute',
@@ -134,20 +134,20 @@ const Navbar: React.FC<NavbarProps> = ({setCenter}) => {
         </ul>
       )}
         <div className="input-group-append">
-          <button type = "submit" className="btn btn-outline-secondary" >Search</button>
+          <button id='searchButton' type = "submit" className="btn btn-outline-secondary" >Search</button>
         </div>
       </form>
       <div className='nav-list'>
         {        isLoggedIn ? (
           <>
-            <Link className='nav-option' href='/profile'><button className='btn btn-primary'>{name}</button></Link>
-            <Link onClick={handleLogout} className='nav-option' href='/'><button className='btn btn-outline-primary'>Logout</button></Link>
-            <Link className='nav-option' href='/upload'><button id='addButton' className='btn btn-outline-primary'><p className="bi bi-plus mb-0">+</p></button></Link>
+            <Link className='nav-option' href='/'><button id='nameButton' className='btn btn-primary'>{name}</button></Link>
+            <Link onClick={handleLogout} className='nav-option' href='/'><button id='logoutButton' className='btn btn-outline-primary'>Logout</button></Link>
+            <Link className='nav-option' href='/upload'><button id='addButton' className='btn btn-outline-primary'>+</button></Link>
           </>
         ) : (
         <>
-        <Link className='nav-option' href='/login'><button className='btn btn-primary'>Login</button></Link>
-        <Link className='nav-option' href='/register'><button className='btn btn-outline-primary'>Register</button></Link>
+        <Link className='nav-option' href='/login'><button id='loginButton' className='btn btn-primary'>Login</button></Link>
+        <Link className='nav-option' href='/register'><button id='registerButton' className='btn btn-outline-primary'>Register</button></Link>
         </>
         )}
       </div>

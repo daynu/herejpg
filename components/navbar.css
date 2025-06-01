@@ -34,11 +34,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2em;
+    font-size: 1.7em;
+    font-weight: bold;
 }
 
 #searchBar
-{
+{   
+    margin-left: 5vw;
     width: 35%;
     height: 100%;
     display: flex;
@@ -47,10 +49,65 @@
     margin-bottom: none;
 }
 
+#searchBarText
+{
+    
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    margin-right: 1%;
+    margin-top: 0;
+}
+
 #addButton
 {
-    border-radius: 50%;
-    text-align: center;
-    display: flex;
-    justify-content: center;
+width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#nameButton, #loginButton
+{
+    background-color: rgb(52, 52, 110);
+    border: none;
+}
+
+#nameButton:hover, #loginButton:hover
+{
+    background-color: rgb(74, 74, 156);
+    color: white;
+}
+
+
+#searchButton
+{
+    background-color: rgb(74, 74, 74);
+    color: white;
+
+}
+
+#searchButton:hover
+{
+    background-color: rgb(100, 100, 100);
+}
+
+#logoutButton, #registerButton
+{
+    border: none;
+    background-color: rgb(156, 44, 44);
+    color: white;
+    cursor: pointer;
+}
+
+#logoutButton:hover, #registerButton:hover
+{
+    background-color: rgb(200, 44, 44);
 }

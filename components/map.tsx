@@ -20,6 +20,7 @@ interface Photo {
   caption: string;
   image: string;
   _id: string;
+  createdAt: string;
   user: {
     name: string;
     _id: string;
@@ -170,21 +171,36 @@ const Map: React.FC<MapProps> = ({ center }) => {
             icon={customIcon}
           >
             <Popup>
-              <strong>{photo.user.name}</strong>
-              <br />
+              <div className='popupContent'>
+                <strong>{photo.user.name}</strong>
+              
                 {photo.caption}
+
                 <br />
                 <img
                   src={photo.image}
                   alt="Uploaded"
                   style={{ maxWidth: '150px', maxHeight: '150px' }}
                 />
+                 {photo.createdAt && (
+                  <span>Posted on: {new Date(photo.createdAt).toLocaleDateString(
+                    'en-US',
+                    {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                      hour: '2-digit',
+                      minute: '2-digit',
+                    }
+                  )}</span>
+                )}
                 {user && ( String(user?.id) === String(photo.user._id) || user.role == 'admin') && (
-                  <div style={{ marginTop: '8px' }}>
-                    <button onClick={() => handleEditButton(photo)}>Edit</button>
-                    <button onClick={() => handleDeleteButton(photo)}>Delete</button>
+                  <div className='mapButtonsContainer' style={{ marginTop: '8px' }}>
+                    <button className='mapButton' onClick={() => handleEditButton(photo)}>Edit</button>
+                    <button className='mapButton deleteButton' onClick={() => handleDeleteButton(photo)}>Delete</button>
                   </div>
                 )}
+              </div>
   
             </Popup>
           </Marker>
@@ -215,7 +231,7 @@ const Map: React.FC<MapProps> = ({ center }) => {
     <label>
       New Image:
       <input
-
+        className='form-control'
         type="file"
         accept="image/*"
          onChange={(e) => {
@@ -233,8 +249,8 @@ const Map: React.FC<MapProps> = ({ center }) => {
       />
     </label>
     <div className="sidebar-buttons">
-      <button onClick={handleSaveEdit}>Save</button>
-      <button onClick={() => {
+      <button className='mapButton' onClick={handleSaveEdit}>Save</button>
+      <button className='mapButton deleteButton' onClick={() => {
         setEditingPhoto(null);
         setEditImage('');
         setEditCaption('');

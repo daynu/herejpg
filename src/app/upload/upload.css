@@ -1,0 +1,84 @@
+#uploadForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: absolute;
+  left: 15%;
+  margin-top: 25px;
+  border:0.5vh solid #191919;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+input[type="text"],
+input[type="file"] {
+  width: 100%;
+  margin-top: 4px;
+}
+
+#uploadForm
+{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+}
+
+  .upload-pg-button {
+    width: 15%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+input[type="text"]
+{
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.caption-input {
+  width: 70%;
+  min-height: 32px;
+  resize: none;
+  overflow: hidden;
+  font-size: 1rem;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  line-height: 1.4;
+}
+
+#fileInput
+{
+  width: 70%;
+}
+
+#cancelUploadButton {
+  width: 15%;
+  padding: 10px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#cancelUploadButton:hover {
+  background-color: #d32f2f;
+}
+
+#captureButton {
+  width: 15%;
+  padding: 10px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

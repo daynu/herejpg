@@ -8,7 +8,7 @@ import { LatLngExpression } from "leaflet";
 export default function Home() {
 
   const [name, setName] = useState('');
-  const [center, setCenter] = useState<LatLngExpression>([45, 25]);
+  const [center, setCenter] = useState<LatLngExpression>([45.65, 25.6]);
 
 
   useEffect(() => {

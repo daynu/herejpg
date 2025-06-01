@@ -49,3 +49,44 @@
     max-height: 250px;
     max-width: 100%;
 }
+
+.mapButton {
+  padding: 7px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.deleteButton
+{
+  background-color: rgb(156,44,44);
+}
+
+.mapButton:hover {
+  background-color: #45a049;
+}
+
+.deleteButton:hover
+{
+  background-color: rgb(200, 44, 44)  ;
+}
+
+.mapButtonsContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.popupContent
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
